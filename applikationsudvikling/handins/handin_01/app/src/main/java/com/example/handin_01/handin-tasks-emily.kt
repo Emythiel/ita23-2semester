@@ -16,6 +16,9 @@ fun main() {
         // Not perfect, doesn't check exact month/days (eg February 31st is valid)
     //println(h4validateCPR("100196-3224")) // True
     //println(h4validateCPR("320280-8175")) // False
+
+        // Run Task 5 - FizzBuzz Numbers
+    println(h5fizzBuzzNumbers())
 }
 
 
@@ -76,6 +79,7 @@ fun h2getMin(x: Int, y: Int, z: Int): Int {
     that takes in a list of numbers and returns their average
 */
 fun h3calculateAverage(listOfNumbers: List<Int>): Double {
+    println("\nTask 3 -- Average Calculator")
     var sumOfNumbers: Double = 0.0
     for (number in listOfNumbers) {
         val numberAsDouble: Double = number.toDouble()
@@ -94,6 +98,7 @@ fun h3calculateAverage(listOfNumbers: List<Int>): Double {
     The method returns true if the CPR number is valid, false if it is not.
 */
 fun h4validateCPR(cpr: String): Boolean {
+    println("\nTask 4 -- CPR Validator")
     return """^(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[0-2])\d{2}-\d{4}$""".toRegex().matches(cpr)
 }
 
@@ -105,8 +110,21 @@ fun h4validateCPR(cpr: String): Boolean {
     and for multiples of five, print "Buzz".
     For numbers which are multiples of both three and five, print "FizzBuzz".
 */
-fun h5fizzBuzzNumbers() {
-
+fun h5fizzBuzzNumbers(): List<String> {
+    println("\nTask 5 -- FizzBuzz Numbers")
+    val listOfNumbers: MutableList<String> = mutableListOf()
+    for (i in 1..100) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            listOfNumbers.add("FizzBuzz")
+        } else if (i % 3 == 0) {
+            listOfNumbers.add("Fizz")
+        } else if (i % 5 == 0) {
+            listOfNumbers.add("Buzz")
+        } else {
+            listOfNumbers.add(i.toString())
+        }
+    }
+    return listOfNumbers
 }
 
 /*
@@ -116,7 +134,10 @@ fun h5fizzBuzzNumbers() {
     displayed as it is.
     Eg. "Robert Brett Roser" becomes "R.B. Roser".
 */
-
+fun h6nameToInitials() {
+    println("\nTask 2 -- Max / Min number check")
+    
+}
 
 /*
     7.
