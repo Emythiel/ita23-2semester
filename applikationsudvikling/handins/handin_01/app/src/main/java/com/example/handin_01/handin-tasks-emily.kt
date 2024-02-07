@@ -14,9 +14,10 @@ fun main() {
 
         // Run Task 4 - CPR Validator
         // Not perfect, doesn't check exact month/days (eg February 31st is valid)
-    println(h4validateCPR("100196-3224")) // True
-    println(h4validateCPR("320280-8175")) // False
+    //println(h4validateCPR("100196-3224")) // True
+    //println(h4validateCPR("320280-8175")) // False
 }
+
 
 /*
     1.
@@ -36,6 +37,7 @@ fun h1voteCheck(): String {
         return "You're not eligible to vote yet!"
     }
 }
+
 
 /*
     2.
@@ -95,6 +97,7 @@ fun h4validateCPR(cpr: String): Boolean {
     return """^(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[0-2])\d{2}-\d{4}$""".toRegex().matches(cpr)
 }
 
+
 /*
     5.
     Write a program that prints the numbers from 1 to 100.
@@ -102,7 +105,9 @@ fun h4validateCPR(cpr: String): Boolean {
     and for multiples of five, print "Buzz".
     For numbers which are multiples of both three and five, print "FizzBuzz".
 */
+fun h5fizzBuzzNumbers() {
 
+}
 
 /*
     6.
