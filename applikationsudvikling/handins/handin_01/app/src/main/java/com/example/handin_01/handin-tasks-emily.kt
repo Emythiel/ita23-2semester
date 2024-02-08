@@ -18,16 +18,16 @@ fun main() {
     //println(h4validateCPR("320280-8175")) // False
 
         // Run Task 5 - FizzBuzz Numbers
-    println(h5fizzBuzzNumbers())
+    //println(h5fizzBuzzNumbers())
 
         // Run Task 6 - Full Name to Initials
-
+    println(h6nameToInitials())
 
         // Run Task 7 - Numerical Grade to Letter Grade
 
 
         // Run Task 8 - Filter Words by Length
-    
+
 }
 
 
@@ -143,9 +143,24 @@ fun h5fizzBuzzNumbers(): List<String> {
     displayed as it is.
     Eg. "Robert Brett Roser" becomes "R.B. Roser".
 */
-fun h6nameToInitials() {
+fun h6nameToInitials(): String {
     println("\nTask 6 -- Full name to initials")
-
+    print("Enter your full name: ")
+    val nameInput: String = readln()
+    val nameToList = nameInput.split(" ")
+    var finalNameOutput: String = ""
+    // Loop through each entry in nameToList
+    // Check if entry is before last entry, if just add first letter and . to finalNameOutput
+    // For the final entry, add full string
+    // Covers if name input is two names, 3 names, 100 names. Everything before last name will be shortened
+    for (i in nameToList.indices) {
+        if (i < nameToList.size - 1) {
+            finalNameOutput += nameToList[i][0] + "."
+        } else {
+            finalNameOutput += " " + nameToList[i]
+        }
+    }
+    return finalNameOutput
 }
 
 /*
