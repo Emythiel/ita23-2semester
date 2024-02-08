@@ -21,13 +21,13 @@ fun main() {
     //println(h5fizzBuzzNumbers())
 
         // Run Task 6 - Full Name to Initials
-    println(h6nameToInitials())
+    //println(h6nameToInitials())
 
         // Run Task 7 - Numerical Grade to Letter Grade
-
+    //println(h7gradeToLetter())
 
         // Run Task 8 - Filter Words by Length
-
+    println(h8filterWordsByLength())
 }
 
 
@@ -176,9 +176,25 @@ fun h6nameToInitials(): String {
         - 60-69: "D"
         - Below 60: "F"
 */
-fun h7gradeToLetter() {
+fun h7gradeToLetter(): String {
     println("\nTask 7 -- Numerical grade to letter grade")
-
+    print("Input your numerical grade: ")
+    val numericalGrade: Int? = readlnOrNull()?.toIntOrNull()
+    if (numericalGrade === null || numericalGrade > 100 || numericalGrade < 0) {
+        return "Invalid grade input." +
+                "\n Make sure it's a number between 0 to 100"
+    }
+    if (numericalGrade in 90..100) {
+        return "A"
+    } else if (numericalGrade in 80..89) {
+        return "B"
+    } else if (numericalGrade in 70..79) {
+        return "C"
+    } else if (numericalGrade in 60..69) {
+        return "D"
+    } else {
+        return "F"
+    }
 }
 
 
