@@ -19,6 +19,15 @@ fun main() {
 
         // Run Task 5 - FizzBuzz Numbers
     println(h5fizzBuzzNumbers())
+
+        // Run Task 6 - Full Name to Initials
+
+
+        // Run Task 7 - Numerical Grade to Letter Grade
+
+
+        // Run Task 8 - Filter Words by Length
+    
 }
 
 
@@ -135,8 +144,8 @@ fun h5fizzBuzzNumbers(): List<String> {
     Eg. "Robert Brett Roser" becomes "R.B. Roser".
 */
 fun h6nameToInitials() {
-    println("\nTask 2 -- Max / Min number check")
-    
+    println("\nTask 6 -- Full name to initials")
+
 }
 
 /*
@@ -152,12 +161,20 @@ fun h6nameToInitials() {
         - 60-69: "D"
         - Below 60: "F"
 */
+fun h7gradeToLetter() {
+    println("\nTask 7 -- Numerical grade to letter grade")
+
+}
 
 
 /*
     8.
     Write a Kotlin function named filterWordsByLength that takes in a list of strings,
-    and returns a a list containing only the words that have a length greater than
+    and returns a list containing only the words that have a length greater than
     or equal to the specified minimum length.
         - Use filter function and Lambda expressions
 */
+fun h8filterWordsByLength() {
+    println("\nTask 8 -- Filter words by specified length")
+
+}
