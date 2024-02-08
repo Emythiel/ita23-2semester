@@ -27,7 +27,7 @@ fun main() {
     //println(h7gradeToLetter())
 
         // Run Task 8 - Filter Words by Length
-    println(h8filterWordsByLength())
+    println(h8filterWordsByLength(listOf("Apple", "Bananas", "Computer Games", "Applepies"), 4))
 }
 
 
@@ -205,7 +205,13 @@ fun h7gradeToLetter(): String {
     or equal to the specified minimum length.
         - Use filter function and Lambda expressions
 */
-fun h8filterWordsByLength() {
+fun h8filterWordsByLength(strList: List<String>, minLength: Int): List<String> {
     println("\nTask 8 -- Filter words by specified length")
-
+    val listOutput: MutableList<String> = mutableListOf()
+    for (str in strList) {
+        if (str.length >= minLength) {
+            listOutput.add(str)
+        }
+    }
+    return listOutput
 }
