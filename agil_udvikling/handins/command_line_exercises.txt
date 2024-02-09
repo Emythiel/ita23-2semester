@@ -1,0 +1,15 @@
+	- Move Two Folders up / Move one level up
+Can technically not be done if there is not enough folders "above" current directory.
+Will not give errors when attempted, but nothing happens.
+
+	- Delete last folder/file you created
+There's no direct "rm lastfilecreated" kind of command if that's what is meant.
+Can obviously always do "rm *name-of-file-created*".
+
+	- Output the content of any file
+Can be done on just about any file, however any file that is not stored in raw text (like .txt, .md etc)
+will print out something that is basically unreadable.
+
+	- "create two directories hill and hill and move into hill"
+Cannot create a directory with name of an already existing one.
+Same with creating a file with a name that exists, however nothing happens (no error messages).
