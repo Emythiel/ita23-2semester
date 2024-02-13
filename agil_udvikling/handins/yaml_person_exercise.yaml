@@ -1,0 +1,12 @@
+firstName: John
+lastName: Doe
+age: 42
+hobbies:
+  - stealth
+  - anonymity
+  - pillow fighting
+favFoods:
+  - pizza
+  - lasagna
+  - burger
+  - icecream
