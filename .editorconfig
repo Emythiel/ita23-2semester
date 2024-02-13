@@ -1,5 +1,10 @@
+# top-most EditorConfig file
 root = true
 
+# Unix-style newlines with newline ending every file
+# Use UTF-8 Charset
+# Set indentation to 4 spaces
+# Trim trailing whitespace
 [*]
 end_of_line = lf
 insert_final_newline = true
@@ -8,8 +13,15 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
+# Override, disable trailing whitespace
 [*.md]
 trim_trailing_whitespace = false
 
+# Override yaml indentation settings
+[*.yml]
+indent_style = space
+indent_size = 2
+
+# Tab indentation, no size specified
 [Makefile]
 indent_style = tab
