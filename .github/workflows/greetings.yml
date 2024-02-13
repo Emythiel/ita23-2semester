@@ -14,10 +14,5 @@ jobs:
       - name: Run hello world
         run: echo "Hello world"
         shell: bash
-  goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run goodbye
+      - name: "Goodbye world!"
         run: echo "Goodbye world!"
-        shell: bash
