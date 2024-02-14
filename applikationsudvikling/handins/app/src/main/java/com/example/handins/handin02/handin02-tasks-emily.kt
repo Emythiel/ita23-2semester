@@ -2,7 +2,7 @@ package com.example.handins.handin02
 
 fun main() {
     // Task 1 -- Employee Salary
-    //h1employeeSalaries()
+    h1employeeSalaries()
 
     // Task 2 -- Computer, Laptop, SmartPhone
     //h2computer()
@@ -29,7 +29,41 @@ fun main() {
     employee's yearly salary again.
 */
 fun h1employeeSalaries() {
+    println("\nTask 1 -- Employee Salaries")
+    val johnDoe = Employee("John", "Doe", 1200.00)
+    val janeFoster = Employee("Jane", "Foster", 1600.50)
 
+    johnDoe.printYearlySalary()
+    janeFoster.printYearlySalary()
+
+    johnDoe.adjustSalaryPercent(-50)
+    janeFoster.adjustSalaryPercent(25)
+
+    johnDoe.printYearlySalary()
+    janeFoster.printYearlySalary()
+}
+class Employee(val firstname: String, val lastname: String, monthlySalary: Double) {
+    private var _monthlySalary: Double = monthlySalary
+    var monthlySalary: Double
+        get() {
+            return _monthlySalary
+        }
+        set(value: Double) {
+            if (value >= 0.0) {
+                _monthlySalary = value
+            } else {
+                _monthlySalary = 0.0
+                println("ERROR: Salary cannot be negative. Setting Salary to 0 instead.")
+            }
+        }
+
+    fun adjustSalaryPercent(percent: Int) {
+        _monthlySalary *= ((percent.toDouble() / 100) + 1)
+    }
+
+    fun printYearlySalary() {
+        println("${this.firstname} ${this.lastname}'s yearly salary is: ${_monthlySalary * 12}")
+    }
 }
 
 /*
@@ -43,6 +77,7 @@ fun h1employeeSalaries() {
     In the main method, create a Laptop and SmartPhone.
 */
 fun h2computer() {
+    println("\nTask 2 -- Computers, Laptops, and Smartphones")
 
 }
 
@@ -57,6 +92,7 @@ fun h2computer() {
         - The book outputs "I am a book".
 */
 fun h3productCategory() {
+    println("\nTask 3 -- Products and Product Category Identification")
 
 }
 
@@ -79,5 +115,6 @@ fun h3productCategory() {
         - The functions will return the perimeter or area of the shape.
 */
 fun h4shapes() {
+    println("\nTask 4 -- Shapes and Area/Perimeter Calculation")
 
 }
