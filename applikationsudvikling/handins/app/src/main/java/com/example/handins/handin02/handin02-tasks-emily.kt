@@ -2,10 +2,10 @@ package com.example.handins.handin02
 
 fun main() {
     // Task 1 -- Employee Salary
-    h1employeeSalaries()
+    //h1employeeSalaries()
 
     // Task 2 -- Computer, Laptop, SmartPhone
-    //h2computer()
+    h2computer()
 
     // Task 3 -- Product Category Identification
     //h3productCategory()
@@ -78,7 +78,94 @@ class Employee(val firstname: String, val lastname: String, monthlySalary: Doubl
 */
 fun h2computer() {
     println("\nTask 2 -- Computers, Laptops, and Smartphones")
+    val myCoolLaptop = Laptop("Xtreme Super Top", "Red", 1000, 15.6)
+    val myFastPhone = SmartPhone("UltraPhone", "Silver", 512, 80)
 
+    myCoolLaptop.getPowerStatus()
+    myCoolLaptop.togglePower()
+    myCoolLaptop.toggleCharging()
+    myCoolLaptop.printStorageLeft()
+    myCoolLaptop.changeStorage = -400
+    println("")
+    myFastPhone.getPowerStatus()
+    myFastPhone.togglePower()
+    myFastPhone.batteryLeft = -90
+    myFastPhone.batteryLeft = 60
+}
+open class Computer(val productName: String, val color: String, changeStorage: Int) {
+    // Power on/off
+    // Starts powered off
+    var isPoweredOn: Boolean = false;
+    fun togglePower() {
+        this.isPoweredOn = !this.isPoweredOn
+        if (isPoweredOn) {
+            println("Turning ${this.productName} ON")
+        } else {
+            println("Turning ${this.productName} OFF")
+        }
+    }
+    fun getPowerStatus() {
+        if (isPoweredOn) {
+            println("${this.productName} is currently powered ON")
+        } else {
+            println("${this.productName} is currently powered OFF")
+        }
+    }
+
+    // Storage Amount
+    private var _changeStorage = changeStorage
+    var changeStorage: Int
+        get() {
+            return _changeStorage
+        }
+        set(value: Int) {
+            if ((_changeStorage + value) < 0) {
+                println("Oops, you'll be out of space! Cannot proceed with storage change")
+            } else {
+                _changeStorage += value
+                println("Changed storage amount by ${value}GB. You now have ${_changeStorage}GB free.")
+            }
+        }
+    // Print storage amount
+    fun printStorageLeft() {
+        println("You have ${this._changeStorage}GB free on this device.")
+    }
+}
+class Laptop(productName: String, color: String, changeStorage: Int, val screenSize: Double): Computer(productName, color, changeStorage) {
+    var isCharging: Boolean = false;
+    fun toggleCharging() {
+        this.isCharging = !this.isCharging
+        if (isCharging) {
+            println("Laptop is currently charging.")
+        } else {
+            println("Laptop is not being charged at the moment.")
+        }
+    }
+}
+class SmartPhone(productName: String, color: String, storageFree: Int, batteryLeft: Int): Computer(productName, color, storageFree) {
+    private var _batteryLeft: Int = batteryLeft
+    var batteryLeft: Int
+        get() {
+            return _batteryLeft
+        }
+        set(value: Int) {
+            val currentCharge = _batteryLeft
+            val newCharge = _batteryLeft + value
+            if (newCharge < 1) {
+                _batteryLeft = 0
+                println("Oof, seems I'm out of battery juice. Goodnight.")
+            } else if (newCharge > 100) {
+                _batteryLeft = 100
+                println("You can't go over 100% battery charge, or it'll blow up! I stopped it at 100% to save you :)")
+            } else {
+                _batteryLeft = newCharge
+                if (newCharge > currentCharge) {
+                    println("Finished charging! You now have ${newCharge}% left")
+                } else {
+                    println("You drained the battery a bit. There's now ${newCharge}% left.")
+                }
+            }
+        }
 }
 
 /*
@@ -86,7 +173,7 @@ fun h2computer() {
     Create a base class Product with attributes like name, price, and
     quantity, as well as a function identifyProductCategory.
     Subclass it to create specific product types like Shoe,
-    T-shirt, and Book. Override the function such taht:
+    T-shirt, and Book. Override the function such that:
         - The shoe outputs "I am a shoe".
         - The T-shirt outputs "I am a T-shirt".
         - The book outputs "I am a book".
