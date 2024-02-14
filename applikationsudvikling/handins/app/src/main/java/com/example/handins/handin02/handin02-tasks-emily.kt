@@ -5,10 +5,10 @@ fun main() {
     //h1employeeSalaries()
 
     // Task 2 -- Computer, Laptop, SmartPhone
-    h2computer()
+    //h2computer()
 
     // Task 3 -- Product Category Identification
-    //h3productCategory()
+    h3productCategory()
 
     // Task 4 -- Shapes and Perimeter/Area Calculation
     //h4shapes()
@@ -36,8 +36,8 @@ fun h1employeeSalaries() {
     johnDoe.printYearlySalary()
     janeFoster.printYearlySalary()
 
-    johnDoe.adjustSalaryPercent(-50)
-    janeFoster.adjustSalaryPercent(25)
+    johnDoe.adjustSalaryPercent(10)
+    janeFoster.adjustSalaryPercent(10)
 
     johnDoe.printYearlySalary()
     janeFoster.printYearlySalary()
@@ -174,13 +174,40 @@ class SmartPhone(productName: String, color: String, storageFree: Int, batteryLe
     quantity, as well as a function identifyProductCategory.
     Subclass it to create specific product types like Shoe,
     T-shirt, and Book. Override the function such that:
-        - The shoe outputs "I am a shoe".
+        - The shoe outputs "I am a shoe"
         - The T-shirt outputs "I am a T-shirt".
         - The book outputs "I am a book".
 */
 fun h3productCategory() {
     println("\nTask 3 -- Products and Product Category Identification")
+    val coolShoe = Shoe("Super Jordans", 99.99, 2)
+    val awesomeTshirt = Tshirt("Hello Kitty Shirt", 16.95, 87)
+    val lotrBook = Book("Lord of The Rings", 29.05, 18)
 
+    coolShoe.identifyProductCategory()
+    awesomeTshirt.identifyProductCategory()
+    lotrBook.identifyProductCategory()
+}
+open class Product(val name: String, var price: Double, var quantity: Int) {
+
+    open fun identifyProductCategory() {
+        println("I am a cool product!")
+    }
+}
+class Shoe(name: String, price: Double, quantity: Int): Product(name, price, quantity) {
+    override fun identifyProductCategory() {
+        println("I am a shoe!")
+    }
+}
+class Tshirt(name: String, price: Double, quantity: Int): Product(name, price, quantity) {
+    override fun identifyProductCategory() {
+        println("I am a T-Shirt!")
+    }
+}
+class Book(name: String, price: Double, quantity: Int): Product(name, price, quantity) {
+    override fun identifyProductCategory() {
+        println("I am a nice book!")
+    }
 }
 
 /*
