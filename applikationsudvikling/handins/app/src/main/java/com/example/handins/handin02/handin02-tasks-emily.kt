@@ -1,5 +1,8 @@
 package com.example.handins.handin02
 
+import kotlin.math.PI
+import kotlin.math.sqrt
+
 fun main() {
     // Task 1 -- Employee Salary
     //h1employeeSalaries()
@@ -8,10 +11,10 @@ fun main() {
     //h2computer()
 
     // Task 3 -- Product Category Identification
-    h3productCategory()
+    //h3productCategory()
 
     // Task 4 -- Shapes and Perimeter/Area Calculation
-    //h4shapes()
+    h4shapes()
 }
 
 
@@ -231,4 +234,53 @@ class Book(name: String, price: Double, quantity: Int): Product(name, price, qua
 fun h4shapes() {
     println("\nTask 4 -- Shapes and Area/Perimeter Calculation")
 
+    val redCircle = Circle("Red", false, 8)
+    redCircle.calculateArea()
+    redCircle.calculatePerimeter()
+
+    val blueRectangle = Rectangle("Blue", true, 12, 4)
+    blueRectangle.calculateArea()
+    blueRectangle.calculatePerimeter()
+
+    val greenTriangle = Triangle("Green", false, 6, 4, 8)
+    greenTriangle.calculateArea()
+    greenTriangle.calculatePerimeter()
+}
+
+open class Shape(val color: String, val isTransparent: Boolean) {
+    open fun calculateArea() {
+        println("This should be overridden")
+    }
+    open fun calculatePerimeter() {
+        println("This should be overridden")
+    }
+}
+class Circle(color: String, isTransparent: Boolean, val radius: Int): Shape(color, isTransparent) {
+    // import kotlin.math.PI to use PI
+    override fun calculateArea() {
+        println("The circles area is: ${PI * radius * radius}")
+    }
+    override fun calculatePerimeter() {
+        println("The circles perimeter: ${2 * PI * radius}")
+    }
+}
+class Rectangle(color: String, isTransparent: Boolean, val height: Int, val width: Int): Shape(color, isTransparent) {
+    override fun calculateArea() {
+        println("The rectangles area is: ${height * width}")
+    }
+    override fun calculatePerimeter() {
+        println("The rectangles perimeter is: ${height + height + width + width}")
+    }
+}
+class Triangle(color: String, isTransparent: Boolean, val bottomLine: Int, val leftLine: Int, val rightLine: Int): Shape(color, isTransparent) {
+    override fun calculateArea() {
+        // https://www.mathsisfun.com/geometry/herons-formula.html
+        // import kotlin.math.sqrt
+        val s: Double = ((bottomLine + leftLine + rightLine) / 2).toDouble()
+        val area: Double = sqrt(s * (s - bottomLine) * (s - leftLine) * (s - rightLine))
+        println("The triangles area is: $area")
+    }
+    override fun calculatePerimeter() {
+        println("The triangles perimeter is: ${bottomLine + leftLine + rightLine}")
+    }
 }
