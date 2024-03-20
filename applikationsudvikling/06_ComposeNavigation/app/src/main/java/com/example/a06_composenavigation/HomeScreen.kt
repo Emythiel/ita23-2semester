@@ -15,9 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    navController: NavController
+) {
     Column{
 
         Row(
@@ -38,7 +41,9 @@ fun HomeScreen() {
 
             AddButton("Your Daily", onButtonClick = {})
 
-            AddButton("Downloads", onButtonClick = {})
+            AddButton("Downloads", onButtonClick = {
+                navController.navigate(route = Screen.Downloads.route)
+            })
 
         }
 
@@ -61,16 +66,9 @@ fun HomeScreen() {
         // Image
         Text(text = "This is actually an image")
 
-    }
-}
+        AddButton("Explore", onButtonClick = {
+            navController.navigate(route = Screen.Explore.route)
+        })
 
-@Composable
-private fun AddButton(value: String, onButtonClick: () -> Unit) {
-    Button(onClick = onButtonClick,
-        Modifier
-            .padding(5.dp),
-        colors = ButtonDefaults.buttonColors(Color.Gray))
-    {
-        Text(value, fontSize = 14.sp)
     }
 }

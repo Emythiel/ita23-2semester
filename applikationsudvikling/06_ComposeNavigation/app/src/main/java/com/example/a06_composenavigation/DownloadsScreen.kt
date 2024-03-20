@@ -15,9 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun DownloadsScreen() {
+fun DownloadsScreen(
+    navController: NavController
+) {
     Column{
 
         Row(
@@ -27,7 +30,9 @@ fun DownloadsScreen() {
             verticalAlignment = Alignment.CenterVertically
         ){
 
-            AddButton("X", onButtonClick = {})
+            AddButton("X", onButtonClick = {
+                navController.popBackStack()
+            })
             Text(text = "Downloads")
 
         }
@@ -47,16 +52,5 @@ fun DownloadsScreen() {
             }
         }
 
-    }
-}
-
-@Composable
-private fun AddButton(value: String, onButtonClick: () -> Unit) {
-    Button(onClick = onButtonClick,
-        Modifier
-            .padding(5.dp),
-        colors = ButtonDefaults.buttonColors(Color.Gray))
-    {
-        Text(value, fontSize = 14.sp)
     }
 }
