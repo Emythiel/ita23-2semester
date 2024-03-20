@@ -38,14 +38,3 @@ fun SetupNavGraph(
         }
     }
 }
-
-@Composable
-fun AddButton(value: String, onButtonClick: () -> Unit) {
-    Button(onClick = onButtonClick,
-        Modifier
-            .padding(5.dp),
-        colors = ButtonDefaults.buttonColors(Color.Gray))
-    {
-        Text(value, fontSize = 14.sp)
-    }
-}
