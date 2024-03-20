@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">kotlin-appdev-intro</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_main3">MainActivity3</string>
+</resources>
