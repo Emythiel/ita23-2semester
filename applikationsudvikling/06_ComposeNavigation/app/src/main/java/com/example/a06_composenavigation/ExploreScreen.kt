@@ -1,6 +1,7 @@
 package com.example.a06_composenavigation
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,7 +31,7 @@ fun ExploreScreen(
             TextField(value = "What are you looking for?", onValueChange = {})
         }
 
-        Box(modifier = Modifier.padding(16.dp)){
+        Box(modifier = Modifier.padding(16.dp).clickable { println("Body scan") }){
             Box(modifier = Modifier
                 .fillMaxWidth()
                 .background(Color.LightGray, shape = RoundedCornerShape(32.dp))
@@ -45,7 +46,7 @@ fun ExploreScreen(
             }
         }
 
-        Box(modifier = Modifier.padding(16.dp)){
+        Box(modifier = Modifier.padding(16.dp).clickable { println("Breathe!") }){
             Box(modifier = Modifier
                 .fillMaxWidth()
                 .background(Color.LightGray, shape = RoundedCornerShape(32.dp))
@@ -60,7 +61,7 @@ fun ExploreScreen(
             }
         }
 
-        Box(modifier = Modifier.padding(16.dp)){
+        Box(modifier = Modifier.padding(16.dp).clickable { println("CHALLENGE THYSELF") }){
             Box(modifier = Modifier
                 .fillMaxWidth()
                 .background(Color.LightGray, shape = RoundedCornerShape(32.dp))
