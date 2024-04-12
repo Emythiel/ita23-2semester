@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "391347621416",
+    "project_id": "fbase-android-intro-emko",
+    "storage_bucket": "fbase-android-intro-emko.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391347621416:android:870db1c77419e0242b2f1d",
+        "android_client_info": {
+          "package_name": "com.example.firebaseandroidintro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "Nyet"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
