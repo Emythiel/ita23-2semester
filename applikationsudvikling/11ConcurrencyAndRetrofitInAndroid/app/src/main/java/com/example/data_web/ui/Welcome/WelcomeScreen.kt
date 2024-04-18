@@ -30,6 +30,10 @@ fun WelcomeScreen(
         AddButton(value = "Get a Cat Fact!", onButtonClick = {
             navController.navigate(route = Screen.CatFactScreen.route)
         })
+
+        AddButton(value = "Check your age", onButtonClick = {
+            navController.navigate(route = Screen.AgifyScreen.route)
+        })
     }
 }
 

@@ -29,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.data_web.ui.Agify.AgifyScreen
 import com.example.data_web.ui.CatFact.CatFactScreen
 import com.example.data_web.ui.Welcome.WelcomeScreen
 import com.example.data_web.ui.Screen
@@ -50,6 +51,11 @@ fun SetupNavGraph(
             route = Screen.CatFactScreen.route
         ) {
             CatFactScreen(navController = navController)
+        }
+        composable(
+            route = Screen.AgifyScreen.route
+        ) {
+            AgifyScreen(navController = navController)
         }
     }
 }
